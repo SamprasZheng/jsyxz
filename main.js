@@ -1,5 +1,6 @@
-console.log("Hello, World!");
-let firstName = "Alice";
-let location = "Wonderland";
+import * as utils from './utils.js';
 
-console.log(`My name is ${firstName} and I live in ${location}.`);
+// utils.arrowadd();
+// console.log(utils.sayHello('Alice'));
+// utils.basicloop();
+utils.arraymethods();
