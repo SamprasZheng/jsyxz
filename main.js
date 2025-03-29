@@ -6,9 +6,14 @@ import * as utils from './utils.js';
 // utils.arraymethods();
 // utils.objectprint();
 
-utils.stringexample();
+// utils.stringexample();
 
-utils.errorhandling();
-utils.spreadoperator();
-utils.restoperator();
-utils.destructuring();
+// utils.errorhandling();
+// utils.spreadoperator();
+// utils.restoperator();
+// utils.destructuring();
+
+utils.listPrime(100);
+
+
+

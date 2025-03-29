@@ -212,6 +212,54 @@ export function errorhandling() {
     } catch (error) {
         console.log(error.message);    // Output: Division by zero is not allowed.
     }
+
+    try {
+        console.log("Try block executed");
+    } catch (error) {
+        console.log("Catch block executed");
+    } finally {
+        console.log("Finally block executed");
+    }
+
+
+    try {
+        let num = -5;
+        if (num < 0) {
+            throw new Error("Negative numbers not allowed");//throw will jump to catch block
+        }
+        // if not string
+        if (typeof num !== "string") {
+            throw new Error("Not a string");
+        }
+    } catch (error) {
+        console.log(`Error caught: ${error.message}`);// Output: Error caught: Negative numbers not allowed
+    }
+
+    //catch all errors
+    try {
+        let num = -5;
+        let errors = [];
+    
+        if (num < 0) {
+            errors.push("Negative numbers not allowed");
+        }
+        if (typeof num !== "string") {
+            errors.push("Not a string");
+        }
+        if (typeof num !== "array") {
+            errors.push("Not an array");
+        }
+        if (num !== "dot") {
+            errors.push("Not Polkadot");
+        }
+    
+        if (errors.length > 0) {
+            throw new Error(errors.join("; "));
+        }
+    } catch (error) {
+        console.log(`Error caught: ${error.message}`);
+    }
+    
 }
 export function spreadoperator() {  
     // Spread operator example
@@ -292,8 +340,57 @@ export function destructuring() {
 
 }
 
+//List Prime Number from 0 to var
+// Initialize a variable to store the maximum number
+// let maxNumber = 10;
+// Function to check if a number is prime
+export function listPrime(num) {
+    const primes = [];
+    if (num < 2) {
+        console.log("No prime numbers found.");
+        console.log("smallest prime number is 2");
+        return;
+    }
+    for (let i = 2; i <= num; i++) {
+        let isPrime = true;
+        for (let j = 2; j < i; j++) {
+            if (i % j === 0) {
+                isPrime = false;
+                break; // No need to continue checking
+            }
+        }
+        if (isPrime) {
+            primes.push(i);
+        }
+        // space-separated
+        // join all prime numbers print in a line
+        // console.log(i);
+        // console.log(`${i} is a prime number.`);
+    }
+    console.log(primes.join(" "));
+}
 
-
+// export function listPrime(num) {
+//     // Function to check if a number is prime
+//     for (let i = 0; i <= num; i++) { 
+//         let p = true;
+//         if (i <= 1) p=false; // Skip numbers less than or equal to 1
+//         for (let j = 2; j < i; j++) {
+//             if (num % j === 0) {p=false;} // Skip non-prime numbers
+//         }
+//         if (p) {console.log(i);}
+//         // Print prime numbers
+//          // Print prime numbers
+//         // Check if the number is prime
+//         // if (isPrime(i)) {
+//         //     console.log(i);
+//         //     // console.log(`${i} is a prime number.`);
+//         // }
+//         // } else {
+//         //     console.log(`${i} is not a prime number.`);
+//         // }
+//     }
+// }
 
 
 // Initialize total to 0
@@ -322,6 +419,7 @@ export function destructuring() {
 
 // import { arrowadd } from './utils.js';
 // arrowadd();
+
 
 
 // import { sayHello } from './utils.js';
