@@ -114,22 +114,6 @@ export function objectprint() {
 
 }
 
-export function string() {
-    let firstName = "Emma";
-    let event = "weekly team meeting";
-    let time = "Thursday at 10 AM";
-
-    let message = "Hi " + firstName + ", you are invited to our " + event + " on " + time + ".";
-
-    console.log(message);
-
-
-    let word = "Hello";
-
-    console.log(word[0]);    // Output: H
-
-    console.log(word[10]);    // Output: undefined
-}
 
 export function stringexample() {
     let firstName = "Emma";
@@ -187,11 +171,130 @@ export function stringexample() {
     let dateStr = date.toISOString();
     console.log(dateStr);    // Output: 2023-10-01T00:00:00.000Z
 
+    let word = "Hello";
 
+    for (let i = 0; i < word.length; i++) {
+    console.log(word[i]);
+    }
+    let sentence = "   Let's learn JavaScript!   ";
 
+    let trimmedSentence = sentence.trim()
+    console.log(trimmedSentence);
+    // Output: Let's learn JavaScript!
 
+    console.log(trimmedSentence.slice(0, 5));
+    // Output: Let's
+
+    console.log(trimmedSentence.concat(" Enjoy!"));
+    // Output: Let's learn JavaScript! Enjoy!
+
+    console.log(trimmedSentence.toUpperCase());
+    // Output: LET'S LEARN JAVASCRIPT!
+
+    console.log(trimmedSentence.toLowerCase());
+    // Output: let's learn javascript!
+
+    console.log(trimmedSentence.replace("javascript", "programming"));
+    // Output: let's learn programming.
+
+    console.log(trimmedSentence.split(" "));
+    // Output: [ "Let's", 'learn', 'JavaScript!' ]
 
 }
+
+export function errorhandling() {
+    // Error handling using try-catch
+    try {
+        let result = 10 / 0;
+        if (result === Infinity) {
+            throw new Error("Division by zero is not allowed.");
+        }
+    } catch (error) {
+        console.log(error.message);    // Output: Division by zero is not allowed.
+    }
+}
+export function spreadoperator() {  
+    // Spread operator example
+    const arr1 = [1, 2, 3];
+    const arr2 = [4, 5, 6];
+
+    // Merging arrays
+    const mergedArray = [...arr1, ...arr2];
+    console.log(mergedArray);    // Output: [1, 2, 3, 4, 5, 6]
+
+    // Copying an array
+    const copiedArray = [...arr1];
+    console.log(copiedArray);    // Output: [1, 2, 3]
+    // more spread operator example
+    const person = {
+        name: "Alice",
+        age: 30
+    };
+    const address = {
+        city: "New York",
+        country: "USA"
+    };
+    // Merging objects
+    const mergedObject = { ...person, ...address };
+    console.log(mergedObject);    // Output: { name: 'Alice', age: 30, city: 'New York', country: 'USA' }
+    // Copying an object
+    const copiedObject = { ...person };
+    console.log(copiedObject);    // Output: { name: 'Alice', age: 30 }
+    // Function with spread operator
+    function displayInfo(name, age, city) {
+        console.log(`Name: ${name}, Age: ${age}, City: ${city}`);
+    }
+    const info = ["Alice", 30, "New York"];
+    // Using spread operator to pass array as arguments
+    displayInfo(...info);    // Output: Name: Alice, Age: 30, City: New York
+    // Using spread operator with Math functions    
+    const numbers = [1, 2, 3, 4, 5];
+    const maxNumber = Math.max(...numbers);
+    console.log(maxNumber);    // Output: 5
+    // Using spread operator with string
+    const str = "Hello";
+    const chars = [...str];
+    console.log(chars);    // Output: ['H', 'e', 'l', 'l', 'o']
+}
+
+
+export function restoperator() {
+    // Rest operator example
+    function sum(...numbers) {
+        let total = 0;
+        for (let number of numbers) {
+            total += number;
+        }
+        return total;
+    }
+
+    console.log(sum(1, 2, 3, 4, 5));    // Output: 15
+}
+
+export function destructuring() {   
+    // Destructuring assignment example
+    const person = {
+        name: "Alice",
+        age: 30,
+        city: "New York"
+    };
+
+    // Destructuring properties
+    const { name, age } = person;
+    console.log(name);    // Output: Alice
+    console.log(age);     // Output: 30
+
+    // Destructuring array
+    const numbers = [1, 2, 3];
+    const [first, second] = numbers;
+    console.log(first);   // Output: 1
+    console.log(second);  // Output: 2
+
+}
+
+
+
+
 
 // Initialize total to 0
 // let total = 0;

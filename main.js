@@ -4,9 +4,11 @@ import * as utils from './utils.js';
 // console.log(utils.sayHello('Alice'));
 // utils.basicloop();
 // utils.arraymethods();
-// utils.objectloop();
 // utils.objectprint();
 
 utils.stringexample();
-// utils.whileloop();
-// utils.whileloop2();
+
+utils.errorhandling();
+utils.spreadoperator();
+utils.restoperator();
+utils.destructuring();
